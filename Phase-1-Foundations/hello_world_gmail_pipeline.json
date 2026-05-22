@@ -1,0 +1,80 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "89878ab2-d4b1-4178-ab47-a91f4e047374",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "ahmad.dtranslator@gmail.com",
+        "subject": "Hello World!",
+        "message": "Hello World!",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "30466bb6-f230-4f70-9331-5e2b8ddd7573",
+      "name": "Send a message",
+      "webhookId": "4f64c86a-e8f8-4458-9b58-188783a6aeb2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "hKEsZXpIlKrFmGP5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Phase 1: Foundational Manual Trigger to Gmail API via OAuth2",
+        "height": 288,
+        "width": 528
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        -112
+      ],
+      "id": "92594f95-45c9-43f5-8edd-c1f4d6c3d8be",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "bd20e597-7c91-437f-8d35-e04f43a37891",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "34e1d981562be4f4cee70630ab94bef6de2b1e88942bdf8de1b223451a2bec79"
+  },
+  "id": "zTmaEloSygL5Ibx3",
+  "tags": []
+}
