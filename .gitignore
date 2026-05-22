@@ -1,0 +1,16 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Node.js and n8n Logs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment & Security Variables
+.env
+.env.*
+
+# n8n Specific Security (Prevents accidental credential commits)
+*-credentials.json
+*secret*
