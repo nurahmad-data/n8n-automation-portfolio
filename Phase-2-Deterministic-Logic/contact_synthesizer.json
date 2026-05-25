@@ -1,0 +1,124 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a77206ed-ba2b-4238-9041-ded447c6d89b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WH_qN6q9aGZQCwcV9CjFDcnM1iVFOLX-gLl8i51Sc1A",
+          "mode": "list",
+          "cachedResultName": "n8n_training_data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WH_qN6q9aGZQCwcV9CjFDcnM1iVFOLX-gLl8i51Sc1A/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WH_qN6q9aGZQCwcV9CjFDcnM1iVFOLX-gLl8i51Sc1A/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        112,
+        0
+      ],
+      "id": "9cd0f1f3-1e9b-44e7-afcd-fb4ec8464e56",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CiLIWX3rNG1etCmc",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4945b8ae-36f3-4dcd-8c5d-02a9102eb8b2",
+              "name": "full_name",
+              "value": "={{ $json.first_name}} {{ $json.last_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        0
+      ],
+      "id": "0456006c-31b5-47e7-affe-a3dad27e1c43",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "content": "Phase 2: The Contact Synthesizer\nInput: Ingests raw JSON payload containing separate first_name and last_name fields via Google Sheets.\nTransformation: Utilizes the Set node and expression engine ({{ $json.first_name }} {{ $json.last_name }}) to merge string data.\nOutput: Generates a unified full_name field for downstream routing.",
+        "height": 368,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -96,
+        -160
+      ],
+      "id": "2c69074d-aed2-4c7e-9978-f726136855f0",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "728ca9e2-78f7-44e1-b677-9a4004f1a7b8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "34e1d981562be4f4cee70630ab94bef6de2b1e88942bdf8de1b223451a2bec79"
+  },
+  "id": "5yRGDRsIJJAHgVA0",
+  "tags": []
+}
