@@ -1,6 +1,9 @@
 ## Phase 2: Data Handling & JSON Literacy
 **Project:** The Contact Synthesizer
 
+**Visual Architecture:**
+![Contact Synthesizer Workflow](Documentation-Assets/Phase-2-Contact-Synthesizer.png)
+
 **Objective:** Master JSON dot notation to dynamically reshape data payloads.
 
 **Technical Execution:**
