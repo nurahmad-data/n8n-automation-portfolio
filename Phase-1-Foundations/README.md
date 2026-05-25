@@ -2,7 +2,7 @@
 **Project:** "Hello World" Connectivity Protocol
 
 **Visual Architecture:**
-![Hello World Workflow](Documentation-Assets/Phase-1-Hello-World.png)
+![Hello World Workflow](../Documentation-Assets/Phase-1-Hello-World.png)
 
 **Objective:** Establish a self-hosted infrastructure and validate external service authentication.
 
