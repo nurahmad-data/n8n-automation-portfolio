@@ -1,6 +1,9 @@
 ## Phase 1: Local Orchestration & The Atomic Node Protocol
 **Project:** "Hello World" Connectivity Protocol
 
+**Visual Architecture:**
+![Hello World Workflow](Documentation-Assets/Phase-1-Hello-World.png)
+
 **Objective:** Establish a self-hosted infrastructure and validate external service authentication.
 
 **Technical Execution:**
